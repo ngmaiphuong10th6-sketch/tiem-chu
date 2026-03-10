@@ -1,0 +1,28 @@
+tram-van
+│
+├ app
+│ ├ page.tsx
+│ ├ login
+│ │ └ page.tsx
+│ ├ admin
+│ │ └ page.tsx
+│
+├ components
+│ ├ Navbar.tsx
+│ ├ ExamRoom.tsx
+│ ├ DocumentStore.tsx
+│
+├ lib
+│ ├ mongodb.ts
+│ ├ auth.ts
+│
+├ models
+│ ├ User.ts
+│ ├ Exam.ts
+│ ├ Document.ts
+│
+├ styles
+│ └ globals.css
+│
+├ .env
+├ package.json

@@ -1,0 +1,37 @@
+const activeDevices = new Map()
+
+export const checkDeviceLimit = (userId,deviceId)=>{
+
+if(!activeDevices.has(userId)){
+activeDevices.set(userId,[])
+}
+
+const devices = activeDevices.get(userId)
+
+if(!devices.includes(deviceId)){
+devices.push(deviceId)
+}
+
+if(devices.length > 2){
+
+throw new Error("Tài khoản đăng nhập quá nhiều thiết bị")
+
+}
+
+activeDevices.set(userId,devices)
+
+}
+
+export const logoutDevice = (userId,deviceId)=>{
+
+if(!activeDevices.has(userId)){
+return
+}
+
+const devices = activeDevices.get(userId)
+
+const newDevices = devices.filter(d=>d !== deviceId)
+
+activeDevices.set(userId,newDevices)
+
+}
